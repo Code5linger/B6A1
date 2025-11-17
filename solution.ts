@@ -1,11 +1,3 @@
-/*
-- This solution.ts file is an example; replace it with your own code.
-- Use the same function names and parameter names as in the problem statement.
-- Write only the code inside the function bodies and return the result.
-- Do not use any console.log statements or comments.
-*/
-
-// Problem 1
 function formatValue(
   input: string | number | boolean
 ): string | number | boolean {
@@ -21,7 +13,6 @@ function formatValue(
   }
 }
 
-// Problem 2
 function getLength(input: string | unknown[]): number {
   if (typeof input === 'string') {
     return input.length;
@@ -32,7 +23,6 @@ function getLength(input: string | unknown[]): number {
   }
 }
 
-// Problem 3
 class Person {
   name: string;
   age: number;
@@ -47,7 +37,6 @@ class Person {
   }
 }
 
-// Problem 4
 interface Item {
   title: string;
   rating: number;
@@ -57,7 +46,6 @@ function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
 }
 
-// Problem 5
 interface Data {
   id: number;
   name: string;
@@ -69,7 +57,6 @@ function filterActiveUsers(data: Data[]): Data[] {
   return data.filter((data) => data.isActive);
 }
 
-// Problem 6
 interface Book {
   title: string;
   author: string;
@@ -85,7 +72,6 @@ function printBookDetails(book: Book): void {
   );
 }
 
-// Problem 7
 function getUniqueValues(
   arrA: (string | number)[],
   arrB: (string | number)[]
@@ -112,8 +98,6 @@ function getUniqueValues(
 
   return result;
 }
-
-// Problem 8
 
 interface Product {
   name: string;

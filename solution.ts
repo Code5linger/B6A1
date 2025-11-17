@@ -5,27 +5,45 @@
 - Do not use any console.log statements or comments.
 */
 
-const getSwallowVelocity = (type: 'african' | 'european'): string => {
-  if (type === 'african') {
-    return 'Roughly 11 meters per second.';
-  }
-  return "I... I don't know that!";
-};
-
-const isCatLiquid = (isAsleep: boolean, containerShape: string): boolean => {
-  return isAsleep && containerShape !== 'none';
-};
-
-class Wizard {
-  name: string;
-  favoriteSpell: string;
-
-  constructor(name: string, favoriteSpell: string) {
-    this.name = name;
-    this.favoriteSpell = favoriteSpell;
-  }
-
-  castSpell(): string {
-    return `${this.name} casts ${this.favoriteSpell}!`;
+// Problem 1
+function formatValue(
+  input: string | number | boolean
+): string | number | boolean {
+  switch (typeof input) {
+    case 'string':
+      return input.toUpperCase();
+    case 'number':
+      return input * 10;
+    case 'boolean':
+      return !input;
+    default:
+      return 'Invalid input type';
   }
 }
+
+// Problem 1
+
+// const getSwallowVelocity = (type: 'african' | 'european'): string => {
+//   if (type === 'african') {
+//     return 'Roughly 11 meters per second.';
+//   }
+//   return "I... I don't know that!";
+// };
+
+// const isCatLiquid = (isAsleep: boolean, containerShape: string): boolean => {
+//   return isAsleep && containerShape !== 'none';
+// };
+
+// class Wizard {
+//   name: string;
+//   favoriteSpell: string;
+
+//   constructor(name: string, favoriteSpell: string) {
+//     this.name = name;
+//     this.favoriteSpell = favoriteSpell;
+//   }
+
+//   castSpell(): string {
+//     return `${this.name} casts ${this.favoriteSpell}!`;
+//   }
+// }

@@ -21,6 +21,17 @@ function formatValue(
   }
 }
 
+// Problem 2
+function getLength(input: string | unknown[]): number {
+  if (typeof input === 'string') {
+    return input.length;
+  } else if (Array.isArray(input)) {
+    return input.length;
+  } else {
+    throw new Error('Invalid input. Expected a string or an array.');
+  }
+}
+
 // Problem 1
 
 // const getSwallowVelocity = (type: 'african' | 'european'): string => {

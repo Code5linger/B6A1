@@ -32,6 +32,37 @@ function getLength(input: string | unknown[]): number {
   }
 }
 
+// Problem 3
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  }
+}
+
+// Problem 4
+interface Item {
+  title: string;
+  rating: number;
+}
+
+function filterByRating(items: Item[]): Item[] {
+  return items.filter((item) => item.rating >= 4);
+}
+
+const books = [
+  { title: 'Book A', rating: 4.5 },
+  { title: 'Book B', rating: 3.2 },
+  { title: 'Book C', rating: 5.0 },
+];
+
 // Problem 1
 
 // const getSwallowVelocity = (type: 'african' | 'european'): string => {

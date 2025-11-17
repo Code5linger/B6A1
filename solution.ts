@@ -57,35 +57,82 @@ function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
 }
 
-const books = [
-  { title: 'Book A', rating: 4.5 },
-  { title: 'Book B', rating: 3.2 },
-  { title: 'Book C', rating: 5.0 },
-];
+// Problem 5
+interface Data {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
 
-// Problem 1
+function filterActiveUsers(data: Data[]): Data[] {
+  return data.filter((data) => data.isActive);
+}
 
-// const getSwallowVelocity = (type: 'african' | 'european'): string => {
-//   if (type === 'african') {
-//     return 'Roughly 11 meters per second.';
-//   }
-//   return "I... I don't know that!";
-// };
+// Problem 6
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
 
-// const isCatLiquid = (isAsleep: boolean, containerShape: string): boolean => {
-//   return isAsleep && containerShape !== 'none';
-// };
+function printBookDetails(book: Book): void {
+  console.log(
+    `Title: ${book.title}, Author: ${book.author}, Published: ${
+      book.publishedYear
+    }, Available: ${book.isAvailable ? 'Yes' : 'No'}`
+  );
+}
 
-// class Wizard {
-//   name: string;
-//   favoriteSpell: string;
+// Problem 7
+function getUniqueValues(
+  arrA: (string | number)[],
+  arrB: (string | number)[]
+): (string | number)[] {
+  const result: (string | number)[] = [];
 
-//   constructor(name: string, favoriteSpell: string) {
-//     this.name = name;
-//     this.favoriteSpell = favoriteSpell;
-//   }
+  function addUnique(arr: (string | number)[]) {
+    for (let i = 0; i < arr.length; i++) {
+      let exists = false;
+      for (let j = 0; j < result.length; j++) {
+        if (arr[i] === result[j]) {
+          exists = true;
+          break;
+        }
+      }
+      if (!exists) {
+        result[result.length] = arr[i];
+      }
+    }
+  }
 
-//   castSpell(): string {
-//     return `${this.name} casts ${this.favoriteSpell}!`;
-//   }
-// }
+  addUnique(arrA);
+  addUnique(arrB);
+
+  return result;
+}
+
+// Problem 8
+
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  return products.reduce((total, product) => {
+    const { price, quantity, discount } = product;
+    const productTotal = price * quantity;
+
+    const discountedTotal = discount
+      ? productTotal * (1 - discount / 100)
+      : productTotal;
+
+    return total + discountedTotal;
+  }, 0);
+}
